@@ -1,1 +1,1 @@
-test quote 123123123
+This scenario is created to overview how Kubernetes service application deployment and ingress works.

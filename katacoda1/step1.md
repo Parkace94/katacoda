@@ -1,3 +1,4 @@
+Enable the ingress controller
 1. Run following commands to start your Minikube session:
    
 `minikube start`{{execute}}
@@ -11,9 +12,3 @@
 3. Run following commands to verify that the NGINX Ingress controller is enabled and running:
 
 `kubectl get pods -n kube-system`{{execute}}
-
-
-minikube code testing `minikube -h`{{execute}}
-
-`echo "Copy to Clipboard"`{{copy}}
-
