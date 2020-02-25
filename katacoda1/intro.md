@@ -1,1 +1,2 @@
 This scenario is created to overview how Kubernetes service application deployment and ingress works.
+In this practice, you will be experiencing how to start minikube, enabling ingress, and deploying simple application.
