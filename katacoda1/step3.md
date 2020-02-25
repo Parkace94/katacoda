@@ -1,22 +1,37 @@
-Create an ingree resource
+Create an ingree resource in your cluster.
 1. Run following commands to navigate yourself to file directory with `example-ingress.yaml` file, and apply.
 
-`cd /usr/local/bin/`{{execute}}
+    `cd /usr/local/bin/`{{execute}}
 
-`cat example-ingress.yaml` {{execute}}
+    Run list commands to see if file is there:
+  
+    `l`{{execute}}
 
-`kubectl apply -f example-ingress.yaml`{{execute}}
+    Run cat command to view content of the file:
 
-2. Run following commands to verify assigned IP address.
+    `cat example-ingress.yaml`{{execute}}
 
-`kubectl get ingress`{{execute}}
+2. Run kubectl commands to apply the yaml file:
 
-3. Open `/etc/hosts` file and add `Address` and `Hosts` line to the file (see the below example).
+    `kubectl apply -f example-ingress.yaml`{{execute}}
 
-`vi /etc/hosts`{{execute}}
+3. Run following commands to verify assigned IP address.
 
-Example: `172.17.0.5 hello-world.info`
+    `kubectl get ingress`{{execute}}
 
-4. Verfiy if configured ingress is working.
+>**NOTE**: Take note of IP address of the ingress. This process may take up to few minutes.
 
-`curl hello-world.info`{{execute}}
+4. Open `/etc/hosts` file and add `Address` and `Hosts` line to the file (see the below example).
+
+    `vi /etc/hosts`{{execute}}
+
+>**Example**: `172.17.0.5 hello-world.info`
+
+5. Verfiy if configured ingress is working.
+
+    `curl hello-world.info`{{execute}}
+
+>**Example**: 
+    Hello, world!
+    Version: 1.0.0
+    Hostname: web-6d456746d-drfjc
