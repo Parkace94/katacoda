@@ -1,7 +1,7 @@
 Start minikube cluster and enable the ingress controller
 1. Run following commands to start your Minikube session:
 
-   `minikube start`{{execute}}
+    `minikube start`{{execute}}
 
 2. To enable the NGINX Ingress controller, run the following command:
 
