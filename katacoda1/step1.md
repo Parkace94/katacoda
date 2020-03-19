@@ -7,7 +7,7 @@ Start minikube cluster and enable the ingress controller
 
     `minikube addons enable ingress`{{execute}}
 
->**Note**: This may take up to a minute.
+    >**Note**: This may take up to a minute.
 
 3. Run following commands to verify that the NGINX Ingress controller is enabled and running:
 

@@ -19,19 +19,19 @@ Create an ingree resource in your cluster.
 
     `kubectl get ingress`{{execute}}
 
->**NOTE**: Take note of IP address of the ingress. This process may take up to few minutes.
+    >**NOTE**: Take note of IP address of the ingress. This process may take up to few minutes.
 
 4. Open `/etc/hosts` file and add `Address` and `Hosts` line to the file (see the below example).
 
     `vi /etc/hosts`{{execute}}
 
->**Example**: `172.17.0.5 hello-world.info`
+    >**Example**: `172.17.0.5 hello-world.info`
 
 5. Verfiy if configured ingress is working.
 
     `curl hello-world.info`{{execute}}
 
->**Example**: 
-    Hello, world!
-    Version: 1.0.0
-    Hostname: web-6d456746d-drfjc
+    >**Example**: 
+        Hello, world!
+        Version: 1.0.0
+        Hostname: web-6d456746d-drfjc
