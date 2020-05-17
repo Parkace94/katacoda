@@ -3,12 +3,26 @@ Start minikube cluster and enable the ingress controller
 
     `minikube start`{{execute}}
 
-2. To enable the NGINX Ingress controller, run the following command:
+2. Run following commands to navigate yourself to file directory with `example-liveness-readiness.yaml` file, and apply.
 
-    `minikube addons enable ingress`{{execute}}
+    `cd /usr/local/bin/`{{execute}}
 
-    >**Note**: This may take up to a minute.
+    Run list commands to see if file is there:
+  
+    `l`{{execute}}
 
-3. Run following commands to verify that the NGINX Ingress controller is enabled and running:
+    Run cat command to view content of the file:
 
-    `kubectl get pods -n kube-system`{{execute}}
+    `cat example-liveness-readiness.yaml`{{execute}}
+
+    >**NOTE** For the initial 30 seconds of the deployment, there is `/tmp/healthy`, so there will not be any error but after 30 seconds this will be removed which will return a failure code.
+
+3. Run kubectl commands to apply the yaml file:
+
+    `kubectl apply -f example-liveness-readiness.yaml`{{execute}}
+
+4. Run following commands to verify assigned IP address.
+
+    `kubectl describe pod liveness-exec`{{execute}}
+
+    >**NOTE**: Run the above command minute after to see the difference.

@@ -1,18 +1,32 @@
-Deploy a simple application.
-1. Run following commands to create a Hello-World application:
+Start minikube cluster and enable the ingress controller
+1. Run following command to view content of the `example-node-selector.yaml`
 
-    `kubectl run web --image=gcr.io/google-samples/hello-app:1.0 --port=8080`{{execute}}
+    `cat example-node-selector.yaml`{{execute}}
 
-2. Expose the Deployment application.
+    >**NOTE** For this yaml file, it has `nodeSelector: disktype: sdd` this will determine which node this yaml will be deployed.
 
-    `kubectl expose deployment web --target-port=8080 --type=NodePort`{{execute}}
+2. Run kubectl commands to apply the yaml file:
 
-3. Verify the deployed service using kubectl command:
+    `kubectl apply -f example-node-selector.yaml`{{execute}}
 
-    `kubectl get service web`{{execute}}
+3. Run following commands to check if deployment was successful.
 
-4. Export the NodePort:
+    `kubectl get pods -o wide`{{execute}}
 
-    `minikube service web --url`{{execute}}
+    >**NOTE**: You can see current deployment is still pending, this is because it did not find any nodes labeled with `disktype: ssd`.
 
->**NOTE**: at the top of the terminal panel click the plus sign next to terminal, click `Select port to view on Host 1`, and enter the node port of the web service.
+4.  Run following commands to check labels on selected node and add the missing label:
+
+    `kubectl get nodes --show-labels`{{execute}}
+
+    >**NOTE**: From the `LABELS` column, `disktype: sdd` label is missing which our deployment is looking for.
+
+    Run following commands to add the labels, and run `--show-labels` command above after:
+
+    `kubectl label nodes minikube disktype=ssd`{{execute}}
+
+    >**NOTE**: Now `disktype: ssd` label is added to your node.
+
+5.  Verfiy if configured deployment is working:
+   
+    `kubectl get pods -o wide`{{execute}}

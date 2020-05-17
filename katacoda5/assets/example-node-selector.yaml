@@ -5,6 +5,7 @@ metadata:
   labels:
     env: test
 spec:
+  replicas: 3
   containers:
   - name: nginx
     image: nginx
