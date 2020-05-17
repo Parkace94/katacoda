@@ -27,7 +27,9 @@
     },
     "assets": {
       "host01": [
-        {"file": "example-ingress.yaml", "target": "/usr/local/bin/", "chmod": "+x"}
+        {"file": "example-liveness-readiness.yaml", "target": "/usr/local/bin/", "chmod": "+x"}
+        {"file": "example-node-selector.yaml", "target": "/usr/local/bin/", "chmod": "+x"}
+        {"file": "example-replica-set.yaml", "target": "/usr/local/bin/", "chmod": "+x"}
       ]
     },
     "finish": {

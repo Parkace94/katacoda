@@ -1,15 +1,9 @@
 Create an ingree resource in your cluster.
-1. Run following commands to navigate yourself to file directory with `example-ingress.yaml` file, and apply.
-
-    `cd /usr/local/bin/`{{execute}}
-
-    Run list commands to see if file is there:
-  
-    `l`{{execute}}
-
-    Run cat command to view content of the file:
+1. Run following command to view content of the `example-replica-set.yaml`
 
     `cat example-ingress.yaml`{{execute}}
+
+    >**NOTE**: `replicas` under `spec:` determines how many replicas you will be creating when this yaml is deployed to your cluster.
 
 2. Run kubectl commands to apply the yaml file:
 
