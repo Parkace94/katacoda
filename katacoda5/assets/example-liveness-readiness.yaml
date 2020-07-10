@@ -3,15 +3,11 @@ kind: Pod
 metadata:
   labels:
     test: liveness
-  name: liveness-exec
+  name: liveness
 spec:
   containers:
   - name: liveness
     image: k8s.gcr.io/busybox
-    # resources:
-    #   limits:
-    #     memory: "32Mi"
-    #     cpu: "250m"
     args:
     - /bin/sh
     - -c
@@ -23,10 +19,10 @@ spec:
         - /tmp/healthy
       initialDelaySeconds: 5
       periodSeconds: 5
-    readinessProbe:
-      exec:
-        command:
-        - cat
-        - /tmp/healthy
-      initialDelaySeconds: 5
-      periodSeconds: 5
+    # readinessProbe:
+    #   exec:
+    #     command:
+    #     - cat
+    #     - /tmp/healthy
+    #   initialDelaySeconds: 5
+    #   periodSeconds: 5

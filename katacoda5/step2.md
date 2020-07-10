@@ -1,32 +1,44 @@
-Start minikube cluster and enable the ingress controller
-1. Run following command to view content of the `example-node-selector.yaml`
+1. Run following commands to start your Minikube session:
+
+    `minikube start`{{execute}}
+
+    >**About Node Selector**:
+        - nodeSelector is the simplest recommended form of node selection constraints.
+        - For the pod to be eligible to run on a node, the node must have matching labels.
+
+2. Run following commands to view content of the `example-node-selector.yaml`
+   
+    - Navigate and list the files in the file directory
+
+    `cd /usr/local/bin/`{{execute}}
+
+    `l`{{execute}}
+
+    - View the `example-node-selector.yaml`
 
     `cat example-node-selector.yaml`{{execute}}
 
-    >**NOTE** For this yaml file, it has `nodeSelector: disktype: sdd` this will determine which node this yaml will be deployed.
+    >**NOTE**: At the bottom of this yaml file has node selector configured called `nodeSelector: k8s: bootcamp`. With the node selector, this pod will look for the label `k8s=bootcamp` through your nodes before its deployment. The deployment status will be `pending` until it finds the matching label in your node(s).
 
-2. Run kubectl commands to apply the yaml file:
+3. Run kubectl commands to apply the yaml file:
 
     `kubectl apply -f example-node-selector.yaml`{{execute}}
 
-3. Run following commands to check if deployment was successful.
+    - Verify that the pod is running on your cluster
 
-    `kubectl get pods -o wide`{{execute}}
+    `kubectl get pods -o=wide`
 
-    >**NOTE**: You can see current deployment is still pending, this is because it did not find any nodes labeled with `disktype: ssd`.
+    >**NOTE**: You can see the status of this pod is `pending`. This is because none of the nodes in this cluster has label called `k8s=bootcamp`.
 
-4.  Run following commands to check labels on selected node and add the missing label:
+4. Now we are going to add label to our node.
 
-    `kubectl get nodes --show-labels`{{execute}}
+    - Add labels to our node
+    `kubectl label nodes minikube k8s=bootcamp`{{execute}}
 
-    >**NOTE**: From the `LABELS` column, `disktype: sdd` label is missing which our deployment is looking for.
+    >**NOTE**: This command is adding label `k8s=bootcamp` to node called `minikube`.
 
-    Run following commands to add the labels, and run `--show-labels` command above after:
+    - Check the status of pod again
 
-    `kubectl label nodes minikube disktype=ssd`{{execute}}
+    `kubectl get pods -o=wide`
 
-    >**NOTE**: Now `disktype: ssd` label is added to your node.
-
-5.  Verfiy if configured deployment is working:
-   
-    `kubectl get pods -o wide`{{execute}}
+    >**NOTE**: Now you can see the pod starts to building.
