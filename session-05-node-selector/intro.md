@@ -1,0 +1,1 @@
+In this lab you will be deploying a pod with nodeSelector and how nodeSelector is going to control the pod deployment to the cluster nodes.

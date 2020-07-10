@@ -1,0 +1,1 @@
+In this lab you will be deploying simple deployment with liveness probe. Liveness probe will be removed after 30 seconds of deployment and you will be able to see what it's going to happen when liveness probe health check gets removed.
