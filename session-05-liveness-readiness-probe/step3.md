@@ -13,4 +13,4 @@
     `kubectl describe pod liveness`{{execute}}
 
     >For first 30 seconds, no error will show.
-    >After 30 seconds, a warning status will be shown and will have 1 restarts.
+    >After 30 seconds, a warning status will be shown and will start to kill and recreate the pod.
