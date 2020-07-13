@@ -19,7 +19,3 @@
     >**NOTE**: To show working liveness probe, `/bin/sh -c "touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600"` is added to arguments. When the container starts, it will execute this command. Liveness probe will run `cat /tmp/healthy` every 5 seconds to check whether this container is healthy or not. After 30 seconds of container deployment, second part of argument will be triggered and remove `/tmp/healthy` file which makes container `unhealthy` and returns a non-zero value.
 
     >**Readiness probe**: Readiness probes are configured similarly to liveness probe, only difference is you use `readinessProbe` instead of `livenessProbe`.
-
-3. Run kubectl commands to apply the yaml file:
-
-    `kubectl apply -f example-liveness-readiness.yaml`{{execute}}
