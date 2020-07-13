@@ -7,6 +7,7 @@
     "steps": [
       {
         "title": "Step 1",
+        "code": "foreground.sh",
         "text": "step1.md"
       },
       {
@@ -19,6 +20,7 @@
       }
     ],
     "intro": {
+      "courseData": "env-init.sh",
       "text": "intro.md"
     },
     "assets": {
@@ -34,6 +36,7 @@
     "uilayout": "terminal"
   },
   "backend": {
+    "port": 30000,
     "imageid": "minikube-running"
   }
 }
