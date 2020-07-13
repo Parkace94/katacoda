@@ -1,1 +1,1 @@
-TODO: ADD INTRO
+In this lab you will be deploying simple deployment with replica set. Replica set value determines how many pods you will be deploying to the cluster.
