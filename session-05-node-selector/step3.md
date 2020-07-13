@@ -26,4 +26,4 @@
 
     `kubectl get pods -o=wide`{{execute}}
 
-    >**NOTE**: Now because we added matching label to your node, you can see the pod starts to building.
+    >**NOTE**: Now because we added matching label to your node, you can see the pod starts to build the pod.
