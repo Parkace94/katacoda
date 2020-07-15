@@ -13,8 +13,8 @@
       - After 30 seconds, a warning status will be shown and will start to kill and recreate the pod. Once recreate is complete, `RESTARTS` count will go up by one.
       - This is infinite loop of killing and recreating pod, `--watch` command will capture and update on each restarts (approximately every 60~90 seconds).
 
-    >To exit, hold `ctrl+c`.
+  >To exit, hold `ctrl+c`.
 
-    View details of the pod deployment
+  View details of the pod deployment
   
-    `kubectl describe pod liveness`{{execute}}
+  `kubectl describe pod liveness`{{execute}}
