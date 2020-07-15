@@ -13,7 +13,7 @@
     `kubectl get pod --watch`{{execute}}
 
     >You can see 45 pods being terminated.
-    >This will take about 90 seconds to complete.
+    >This will take about 60 seconds to complete.
     >Hold `Ctrl+c` to exit out of the --watch view.
 
     View deployed ReplicaSet status

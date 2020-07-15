@@ -5,7 +5,7 @@
     `kubectl get pod --watch`{{execute}}
 
     >You can see all pods' status change: Pending, ContainerCreating, and Running.
-    >This will take about 90 seconds to complete.
+    >This will take about 60 seconds to complete.
     >Hold `Ctrl+c` to exit out of the --watch view.
 
     View deployed ReplicaSet status
@@ -19,14 +19,3 @@
     `kubectl get pod`{{execute}}
     
     >Each pod has different letters at the end of the name.
-
-5. abcd
-6. Run following command to see details of the deployment:
-
-    `kubectl describe rs/frontend`{{execute}}
-
-    >You can use this to troubleshoot if pod deployment fails.
-
-    - Replicas show the desired and deployed pods.
-    - Pod Status shows the status of current pods.
-    - Events tab shows each pods were created by replicaset-controller. This will also show any errors if detected.
