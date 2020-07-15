@@ -2,7 +2,7 @@
   "title": "Session 5 - Replica Set",
   "description": "Session 5 for Kubernetes Workshop",
   "difficulty": "Beginner",
-  "time": "5 minutes",
+  "time": "10 - 15 minutes",
   "details": {
     "steps": [
       {
@@ -17,6 +17,10 @@
       {
         "title": "Step 3",
         "text": "step3.md"
+      },
+      {
+        "title": "Step 4",
+        "text": "step4.md"
       }
     ],
     "intro": {

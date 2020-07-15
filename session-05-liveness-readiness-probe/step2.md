@@ -12,7 +12,7 @@
 
     - The pod has a single `Container`.
     - The `periodSeconds` specifies the kubelet should perform a liveness probe every 5 seconds.
-    - The `initialDelaySeconds` specifies the kubelet should wait 5 seconds before perform first liveness probe.
+    - The `initialDelaySeconds` specifies the kubelet should wait 5 seconds before performing first liveness probe.
 
     >**NOTE**: The kubelet executes the command `cat /tmp/healthy` in the target container to perform a probe. It will return 0 if the probe performs successfully, if not it returns a non-zero value and the kubelet kills the container and restarts it.
 
