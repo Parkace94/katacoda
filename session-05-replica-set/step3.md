@@ -1,5 +1,9 @@
 4. Run following commands to deploy 50 replicas:
 
+    Run kubectl command to deploy the yaml file
+
+    `kubectl apply -f example-replica-set.yaml`{{execute}}
+
     View ReplicaSet being deployed
 
     `kubectl get pod --watch`{{execute}}
